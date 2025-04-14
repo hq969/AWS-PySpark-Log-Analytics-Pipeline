@@ -1,26 +1,22 @@
 import boto3
 import json
-import time
-import random
 from datetime import datetime
+import random
 
 kinesis = boto3.client('kinesis', region_name='us-east-1')
-stream_name = 'your-kinesis-stream-name'
 
 def generate_log():
     return {
         "timestamp": datetime.utcnow().isoformat(),
-        "ip": f"192.168.0.{random.randint(1, 255)}",
-        "method": random.choice(["GET", "POST", "DELETE"]),
-        "endpoint": random.choice(["/login", "/signup", "/api/data", "/logout"]),
-        "status": random.choice(["200", "404", "500", "403"])
+        "ip": f"192.168.1.{random.randint(1, 255)}",
+        "method": "GET",
+        "endpoint": "/api/v1/data",
+        "status": random.choice(["200", "404", "500"])
     }
 
 while True:
     log = generate_log()
-    print("Sending log:", log)
     kinesis.put_record(
-        StreamName=stream_name,
+        StreamName="your-kinesis-stream-name",
         Data=json.dumps(log),
         PartitionKey="partitionKey")
-    time.sleep(1)  # simulate 1 request/sec
