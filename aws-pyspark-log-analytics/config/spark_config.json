@@ -1,7 +1,8 @@
 {
-  "app_name": "KinesisLogAnalytics",
-  "region": "us-east-1",
-  "stream_name": "your-kinesis-stream-name",
-  "checkpoint_path": "s3://your-bucket/checkpoints/",
-  "output_path": "s3://your-bucket/processed-logs/"
+  "timestamp": "2025-04-14T14:23:45",
+  "ip": "192.168.1.1",
+  "method": "GET",
+  "endpoint": "/api/v1/data",
+  "status": "200"
 }
+
