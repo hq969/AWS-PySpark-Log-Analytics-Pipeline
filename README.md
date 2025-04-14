@@ -13,16 +13,21 @@
 aws-pyspark-log-analytics/
 
 ├── data-generator/
+
 │   └── log_producer.py
 
 ├── spark-jobs/
+
 │   └── streaming_job.py
 
 ├── config/
+
 │   └── spark_config.json
 
 ├── dashboard/
+
 │   └── streamlit_app.py
+
 
 ├── README.md
 
