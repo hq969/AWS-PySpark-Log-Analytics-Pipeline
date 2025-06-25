@@ -9,18 +9,24 @@
 - Athena + Glue (Query layer)
 - Streamlit (Dashboard)
 
-## 📁 Folder Structure
-aws-pyspark-log-analytics/ 
+## 📁 Folder Structure 
 
-├── data-generator/ # Sends fake logs to Kinesis 
+```
+aws-pyspark-log-analytics/
+├── README.md               # Project overview and setup guide
+├── data-generator/         # Python script to simulate and send logs to Kinesis
+│   └── send_logs.py
 
-├── spark-jobs/ # PySpark job to process logs 
+├── spark-jobs/             # PySpark ETL job for processing real-time logs
+│   └── process_logs.py
 
-├── config/ # Config files 
+├── config/                 # Configuration files for stream, batch jobs, and schema
+│   └── kinesis_config.json
 
-├── dashboard/ # Streamlit dashboard 
+├── dashboard/              # Streamlit dashboard for visualizing processed logs
+│   └── app.py
 
-├── README.md
+```
 
 ## 🚀 To Run
 1. Deploy Kinesis Stream.
